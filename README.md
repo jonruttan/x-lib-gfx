@@ -38,7 +38,8 @@ A bundle that depends on it says so in its `bundle.xon`:
 (requires-bundle "gfx")
 ```
 
-`examples/` holds two programs that play scenes: `scenes.x` and `story.x`.
+`examples/` holds three programs that play scenes: `scenes.x`, `story.x` and
+`unit-and-object.x`.
 
 ## Working on it
 
