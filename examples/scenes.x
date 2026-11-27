@@ -17,6 +17,7 @@
 (import gfx/figure)
 (import gfx/scene)
 (import x/num/float)
+(import x/num/float/literal)
 (import x/sys/posix)
 
 (def pink (list 209 71 189 128))

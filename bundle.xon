@@ -5,4 +5,4 @@
 ; Helium: each module imports what it uses.
 (dialect he)
 
-(requires-release "v0.61.0")
+(requires-release "v0.64.0")
