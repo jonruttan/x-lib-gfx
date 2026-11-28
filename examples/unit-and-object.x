@@ -15,7 +15,7 @@
 ; What it shows is x-expr's include/x-obj.h: the datum union, the object
 ; layout and the metadata accessors.
 
-(include "examples/stage.x")
+(include-once "./stage.x")
 
 ; --- The beats -------------------------------------------------------------
 ;

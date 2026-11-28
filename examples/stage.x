@@ -5,7 +5,7 @@
 ; A scene includes this file and hands stage-main its title, its steps and
 ; what to print of its last frame:
 ;
-;   (include "examples/stage.x")
+;   (include-once "./stage.x")
 ;   (stage-main "title" steps (fn (_ figures) ...))
 ;
 ; Each episode draws a part of x with the same definitions, so a refresher

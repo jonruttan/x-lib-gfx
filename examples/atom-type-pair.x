@@ -15,7 +15,7 @@
 ; What it shows is x-expr's include/x-obj.h: the atom and pair layouts, the
 ; type slot, and the built-in ATOM and PAIR type objects (src/x-obj.c).
 
-(include "examples/stage.x")
+(include-once "./stage.x")
 (import x/num/float f-add f-sub f-div)
 
 ; --- Rows ------------------------------------------------------------------
