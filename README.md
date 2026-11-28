@@ -39,8 +39,9 @@ A bundle that depends on it says so in its `bundle.xon`:
 (requires-bundle "gfx")
 ```
 
-`examples/` holds three programs that play scenes: `scenes.x`, `story.x` and
-`unit-and-object.x`.
+`examples/` holds four programs that play scenes: `scenes.x`, `story.x`,
+`unit-and-object.x` and `atom-type-pair.x`. The last two are episodes of a
+series on how x is built, and draw with what `stage.x` defines.
 
 ## Working on it
 
