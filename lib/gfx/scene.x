@@ -141,8 +141,8 @@
     (method smooth (self (param progress NUMBER "0 to 1"))
       (doc "Progress eased: slow away from 0 and slow into 1, 3p^2 - 2p^3."
         (returns FLOAT "0 to 1")
-        (example "(Scene smooth 0.5)" "0.5")
-        (example "(Scene smooth 0.25)" "0.15625"))
+        (example "(import x/num/float/literal) (Scene smooth 0.5)" "0.5")
+        (example "(import x/num/float/literal) (Scene smooth 0.25)" "0.15625"))
       (%smooth (float-of progress)))
 
     (method frame (self (param figures LIST "Figures, drawn first to last")
@@ -206,4 +206,4 @@
 
 (doc (provide gfx/scene Scene)
   "A scene's frames and its stage: (Scene frame figures animations progress width height) draws one frame; (Scene open front title width height rate) makes a stage on Sdl, Web or Linux, and play, wait and close run it."
-  (example "(Scene smooth 0.5)" "0.5"))
+  (example "(import x/num/float/literal) (Scene smooth 0.5)" "0.5"))

@@ -155,8 +155,8 @@
 ; (MINX MINY MAXX MAXY) of the points, control points among them.
 (def %bounds
   (fn (_ m)
-    (list ((%column m 0) least) ((%column m 1) least)
-          ((%column m 0) greatest) ((%column m 1) greatest))))
+    (list ((%column m 0) min) ((%column m 1) min)
+          ((%column m 0) max) ((%column m 1) max))))
 
 (def %mid (fn (_ b k) (f-div (f-add (List ref k b) (List ref (int+ k 2) b)) %two)))
 
@@ -524,7 +524,7 @@
                           (param gap NUMBER "Units between their bounds"))
       (doc "The figure moved to SIDE of OTHER, GAP between their bounds and their middles in line. Raises a label 'value for another SIDE."
         (returns LIST "A figure")
-        (example "(Figure bounds (Figure next-to (Figure square 2) (Figure circle 1) 'right 0.5))" "(1.5 -1.0 3.5 1.0)"))
+        (example "(import x/num/float/literal) (Figure bounds (Figure next-to (Figure square 2) (Figure circle 1) 'right 0.5))" "(1.5 -1.0 3.5 1.0)"))
       (%next-to fig other side (float-of gap)))
 
     (method onto (self (param fig LIST "The figure placed")
@@ -553,7 +553,7 @@
                         (param to LIST "The figure at progress 1"))
       (doc "The animation from one figure to another: points, colours, width and the share drawn each go evenly from FROM's to TO's. Paths are taken pair by pair in order; of a pair, the one of fewer curves is first cut into as many as the other, its shape unchanged, and a path with no partner grows from, or shrinks to, the middle of the other figure. A path is closed on the way while either of its pair is, and as TO's at the end."
         (returns CALLABLE "(fn (_ progress) -> figure)")
-        (example "(Figure bounds ((Figure morph (Figure square 2) (Figure square 4)) 0.5))" "(-1.5 -1.5 1.5 1.5)"))
+        (example "(import x/num/float/literal) (Figure bounds ((Figure morph (Figure square 2) (Figure square 4)) 0.5))" "(-1.5 -1.5 1.5 1.5)"))
       (%morph from to))
 
     (method turn (self (param fig LIST "A figure")
@@ -572,7 +572,7 @@
     (method fade-out (self (param fig LIST "A figure"))
       (doc "The animation that fades the figure: the alpha of its fill and of its stroke go evenly to 0."
         (returns CALLABLE "(fn (_ progress) -> figure)")
-        (example "(List ref 3 (List ref 3 ((Figure fade-out (Figure circle 1)) 0.5)))" "128"))
+        (example "(import x/num/float/literal) (List ref 3 (List ref 3 ((Figure fade-out (Figure circle 1)) 0.5)))" "128"))
       (fn (_ t)
         ((fn (_ u)
            (list (%points fig) (%paths fig) (%fade (%fill fig) u) (%fade (%stroke fig) u) (%width fig) (%drawn fig)))
